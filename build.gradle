@@ -63,8 +63,8 @@ useTestNG(){
 	}
 }
 
-sourceSets
+/*sourceSets
 {
 test.java.srcDir 'src/main/java'
 }
-
+*/
