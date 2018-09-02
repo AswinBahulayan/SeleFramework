@@ -35,13 +35,6 @@ public class SeleniumHelper extends Extent_report implements WebDriverFactory {
 	public int i=1;
 	public WebElement element;
 	
-	@DataProvider(name="getdata")
-	public Object[][] data() throws IOException
-	{
-		Object[][] getdata = Getdata.getdata(excelfilename);
-		
-		return getdata;
-	}
 	@Override
 	public void startApp(String browser, String url) {
 		// TODO Auto-generated method stub
@@ -52,6 +45,7 @@ public class SeleniumHelper extends Extent_report implements WebDriverFactory {
 				ChromeOptions opt=new ChromeOptions();
 				opt.addArguments("--disable-notifications");
 				driver=new ChromeDriver(opt);
+				reportstatus("Chrome browser started", "Pass");
 											}
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block

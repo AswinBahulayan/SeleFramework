@@ -26,15 +26,20 @@ public class ProjectMethod extends SeleniumHelper {
 	@BeforeMethod
 	public  void login()
 	{
-		startApp("chrome", "http://leaftaps.com/opentaps");
-		WebElement eleUserName = locateElement("id", "username");
-		type(eleUserName, "DemoSalesManager");
-		WebElement elePassword = locateElement("id","password");
-		type(elePassword, "crmsfa");
-		//WebElement eleLogin = locateElement("class","decorativeSubmit");
-		click(locateElement("//form[@id='login']/child::p/input[@type='submit']"));
-		//WebElement crmsfa = locateElement("LinkText", "CRM/SFA");
-		click(locateElement( "(//div[@id='button']/child::a/img)[1]"));
+		try {
+			startApp("chrome", "http://leaftaps.com/opentaps");
+			WebElement eleUserName = locateElement("id", "username");
+			type(eleUserName, "DemoSalesManager");
+			WebElement elePassword = locateElement("id","password");
+			type(elePassword, "crmsfa");
+			//WebElement eleLogin = locateElement("class","decorativeSubmit");
+			click(locateElement("//form[@id='login']/child::p/input[@type='submit']"));
+			//WebElement crmsfa = locateElement("LinkText", "CRM/SFA");
+			click(locateElement( "(//div[@id='button']/child::a/img)[1]"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 
